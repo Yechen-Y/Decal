@@ -8,7 +8,7 @@ if [ "$#" -lt 1 ]; then
 
 elif [ "$1" = "new" ]; then
     # YOUR CODE HERE #
-echo $(expr $2 + $3) >> $PHONEBOOK_ENTRIES
+echo "$2 $3" >> $PHONEBOOK_ENTRIES
 
 elif [ "$1" = "list" ]; then
     if [ ! -e $PHONEBOOK_ENTRIES ] || [ ! -s $PHONEBOOK_ENTRIES ]; then
@@ -23,7 +23,7 @@ elif [ "$1" = "lookup" ]; then
 grep "$2" $PHONEBOOK_ENTRIES | sed "s/$2//g"
 elif [ "$1" = "remove" ]; then
     # YOUR CODE HERE #
-sed "/$2/d" $PHONEBOOK_ENTRIES > $PHONEBOOK_ENTRIES   
+sed "/$2/d" $PHONEBOOK_ENTRIES 
 elif [ "$1" = "clear" ]; then
     # YOUR CODE HERE #
 rm $PHONEBOOK_ENTRIES 
